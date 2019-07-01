@@ -8,15 +8,12 @@
 	</style>
 </head>
 <body>
-	<h1>演習問15</h1>
-
-    <ol>
-    @foreach($data1 as $num)
-    <li>&nbsp;&nbsp;{{$num}}
+	<h1>演習問題7</h1>
+    <al>
+    @foreach($data as $item)
+    <li>{{$item}}
     @endforeach
-    </ol>
-
-
+    </al>
     <!-- <form method="POST" action="/practice">
         {{ csrf_field() }}
         <input type="text" name="a">
