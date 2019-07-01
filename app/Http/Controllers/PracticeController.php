@@ -10,7 +10,7 @@ class PracticeController extends Controller
     public function index() {
 
         $data = [
-            60, 50, 90, 70, 80
+            60, 50, 90, 70, 10
         ];
         $data1 = $data;
         $tmpmax = max($data);
