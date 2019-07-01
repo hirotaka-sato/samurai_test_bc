@@ -1,38 +1,51 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 class PracticeController extends Controller
 {
-
     public function index() {
-        $data = array();
         $data = [
-            60, 50, 90, 70, 80
+            'msg'=>'Input Age & Sex = ?',
         ];
-        $data1 = $data;
-        $tmpmax = max($data);
-        $tmp = 0;
-        $data1 = [0=>$tmpmax];
-        for($j=1; $j < count($data); $j++) {
-            for($i=0; $i < count($data); $i++) {
-                if(($data[$i] < $tmpmax) && ($data[$i] >= $tmp)) {
-                    $tmp = $data[$i];
-                }
-            }
-            $data1[$j] = $tmp;
-            $tmpmax = $tmp;
-            $tmp = 0;
-        }
-        return view('practice.index',compact('data1'));
-        
+        return view('practice.index', $data);
     }
-    //public function post(Request $request) {
-        // $a = $request->a;
-        // $b = $request->b;
-        //$msg = print_r($data);
-        //return view('practice.index', $data);
-    //}
+    public function post(Request $request) {
+        $a = $request->a;
+        $b = $request->b;
+        if ($b == 'male') {
+            switch($a) {
+                case 25:
+                    $msg = '厄年';
+                    break;
+                case 42:
+                    $msg = '厄年';
+                    break;
+                case 61:
+                    $msg = '厄年';
+                    break;
+                default:
+                    $msg = 'Normal';
+            }
+        } elseif ($b == 'female') {
+            switch($a) {
+                case 19:
+                    $msg = '厄年';
+                    break;
+                case 33:
+                    $msg = '厄年';
+                    break;
+                case 37:
+                    $msg = '厄年';
+                    break;
+                default:
+                    $msg = 'Normal';
+            }
+        } else {
+            $msg = 'Normal';
+        }
+        $data = [
+            'msg'=>'You are ' . $msg . ' !',
+        ];
+        return view('practice.index', $data);
+    }
 }

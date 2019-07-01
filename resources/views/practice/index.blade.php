@@ -8,20 +8,17 @@
 	</style>
 </head>
 <body>
-	<h1>演習問15</h1>
-
-    <ol>
-    @foreach($data1 as $num)
-    <li>&nbsp;&nbsp;{{$num}}
-    @endforeach
-    </ol>
-
-
-    <!-- <form method="POST" action="/practice">
+	<h1>演習問題6</h1>
+    <p>{{$msg}}</p>
+    <form method="POST" action="/practice">
         {{ csrf_field() }}
+        Age
         <input type="text" name="a">
-        <input type="text" name="b">
+        Sex
+        <select name="b" size="5" multiple>
+        <option value="male">male</option>
+        <option value="female">female</option>
         <input type="submit">
-    </form> -->
+    </form>
 </body>
 </html>
