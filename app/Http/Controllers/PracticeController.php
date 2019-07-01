@@ -1,32 +1,14 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 class PracticeController extends Controller
 {
-
     public function index() {
-        $data = array();
-        $data = [
-            60, 50, 90, 70, 80
-        ];
-        $data1 = $data;
-        $tmpmax = max($data);
-        $tmp = 0;
-        $data1 = [0=>$tmpmax];
-        for($j=1; $j < count($data); $j++) {
-            for($i=0; $i < count($data); $i++) {
-                if(($data[$i] < $tmpmax) && ($data[$i] >= $tmp)) {
-                    $tmp = $data[$i];
-                }
-            }
-            $data1[$j] = $tmp;
-            $tmpmax = $tmp;
-            $tmp = 0;
+        for ($i = 0; $i <= 2; $i++) {
+            $a = rand(1,10);
+            $data[] = $a;
         }
-        return view('practice.index',compact('data1'));
+        return view('practice.index',compact('data'));
         
     }
     //public function post(Request $request) {
