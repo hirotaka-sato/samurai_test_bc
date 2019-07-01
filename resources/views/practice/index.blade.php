@@ -8,15 +8,17 @@
 	</style>
 </head>
 <body>
-	<h1>演習問15</h1>
+	<h1>演習問10</h1>
+    <p>
 
-    <ol>
-    @foreach($data1 as $num)
-    <li>&nbsp;&nbsp;{{$num}}
-    @endforeach
-    </ol>
+        @for($i=1; $i <= 31; $i++)
+            {{$i}}&nbsp;
+            @if($i % 7 ==0)
+                <br/>
+            @endif
+        @endfor
 
-
+    </p>
     <!-- <form method="POST" action="/practice">
         {{ csrf_field() }}
         <input type="text" name="a">
