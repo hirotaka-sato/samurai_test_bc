@@ -1,38 +1,30 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 class PracticeController extends Controller
 {
-
     public function index() {
-        $data = array();
         $data = [
-            60, 50, 90, 70, 80
+            'msg'=>'Input month (Which season) = ?',
         ];
-        $data1 = $data;
-        $tmpmax = max($data);
-        $tmp = 0;
-        $data1 = [0=>$tmpmax];
-        for($j=1; $j < count($data); $j++) {
-            for($i=0; $i < count($data); $i++) {
-                if(($data[$i] < $tmpmax) && ($data[$i] >= $tmp)) {
-                    $tmp = $data[$i];
-                }
-            }
-            $data1[$j] = $tmp;
-            $tmpmax = $tmp;
-            $tmp = 0;
-        }
-        return view('practice.index',compact('data1'));
-        
+        return view('practice.index', $data);
     }
-    //public function post(Request $request) {
-        // $a = $request->a;
-        // $b = $request->b;
-        //$msg = print_r($data);
-        //return view('practice.index', $data);
-    //}
+    public function post(Request $request) {
+        $a = $request->a;
+        //$b = $request->b;
+        //$b = (int)($a % 2);
+        if ($a >= 3 && $a < 6) {
+            $msg = 'Spring';
+        } elseif ($a >= 6 && $a < 9) {
+            $msg = 'Summer';
+        } elseif ($a >= 9 && $a <12) {
+            $msg = 'Autumn';
+        } else {
+            $msg = 'Winter';
+        }
+        $data = [
+            'msg'=>'Season is ' . $msg . ' !',
+        ];
+        return view('practice.index', $data);
+    }
 }
