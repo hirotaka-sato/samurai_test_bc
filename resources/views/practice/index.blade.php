@@ -8,11 +8,11 @@
 	</style>
 </head>
 <body>
-	<h1>演習問15</h1>
+	<h1>演習問14</h1>
 
     <ol>
-    @foreach($data1 as $num)
-    <li>&nbsp;&nbsp;{{$num}}
+    @foreach($replace as $msg)
+    <li>&nbsp;&nbsp;{{$msg}}
     @endforeach
     </ol>
 
