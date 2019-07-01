@@ -16,12 +16,5 @@
     @endforeach
     </ol>
 
-
-    <!-- <form method="POST" action="/practice">
-        {{ csrf_field() }}
-        <input type="text" name="a">
-        <input type="text" name="b">
-        <input type="submit">
-    </form> -->
 </body>
 </html>
