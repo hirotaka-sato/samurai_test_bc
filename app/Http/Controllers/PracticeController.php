@@ -4,8 +4,8 @@ use Illuminate\Http\Request;
 class PracticeController extends Controller
 {
     public function index() {
-        for ($i = 0; $i <= 2; $i++) {
-            $a = rand(1,10);
+        for ($i = 0; $i < 3; $i++) {
+            $a = rand(1, 10);
             $data[] = $a;
         }
         return view('practice.index',compact('data'));
