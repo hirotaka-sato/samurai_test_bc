@@ -6,7 +6,7 @@ class PracticeController extends Controller
     public function index() {
         $data = array();
         $data = [
-            60, 50, 90, 70, 80,
+            60, 50, 90, 70, 80, 100
         ];
         $max = 0;
         $j = count($data);
