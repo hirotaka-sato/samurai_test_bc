@@ -9,7 +9,8 @@ class PracticeController extends Controller
             60, 50, 90, 70, 80,
         ];
         $max = 0;
-        for($i=0; $i < count($data); $i++) {
+        $j = count($data);
+        for($i=0; $i < $j; $i++) {
             if($data[$i] > $max) {
                 $max = $data[$i];
             }
