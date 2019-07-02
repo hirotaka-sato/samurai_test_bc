@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 class PracticeController extends Controller
 {
     public function index() {
-        $number = (int)0;
+        $number = 0;
         for($i=1; $i<=100; $i++) {
             $number += $i;
         }
