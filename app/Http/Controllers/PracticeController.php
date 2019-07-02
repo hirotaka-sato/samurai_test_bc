@@ -7,18 +7,18 @@ class PracticeController extends Controller
         $data = [
             60, 50, 90, 70, 80
         ];
-        $data1 = $data;
-        $tmpmax = max($data);
+        $data1 = [];
+        $tmp_max = max($data);
         $tmp = 0;
-        $data1 = [0=>$tmpmax];
+        $data1 = [0=>$tmp_max];
         for($j=1; $j < count($data); $j++) {
             for($i=0; $i < count($data); $i++) {
-                if(($data[$i] < $tmpmax) && ($data[$i] >= $tmp)) {
+                if(($data[$i] < $tmp_max) && ($data[$i] >= $tmp)) {
                     $tmp = $data[$i];
                 }
             }
             $data1[$j] = $tmp;
-            $tmpmax = $tmp;
+            $tmp_max = $tmp;
             $tmp = 0;
         }
         return view('practice.index',compact('data1'));
