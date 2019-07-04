@@ -10,8 +10,8 @@ class PracticeController extends Controller
         $data1 = [
             0=>'aaa', 2=>'ccc'
         ];
-        $replace = array_replace($data, $data1);
-        return view('practice.index',compact('replace'));
+        $replaceNumber = array_replace($data, $data1);
+        return view('practice.index',compact('replaceNumber'));
         
     }
     //public function post(Request $request) {
