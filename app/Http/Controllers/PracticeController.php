@@ -4,12 +4,8 @@ use Illuminate\Http\Request;
 class PracticeController extends Controller
 {
     public function index() {
-        $data = [
-            ['name'=>'山田たろう', 'mail'=>'raro@yamada'],
-            ['name'=>'田中はなこ', 'mail'=>'hanako@flower'],
-            ['name'=>'鈴木さちこ', 'mail'=>'sachiko@happy']
-        ];
-        return view('practice.index',compact('data'));
+
+        return view('practice.index', ['message'=>'Hello!']);
         
     }
     public function post(Request $request) {
