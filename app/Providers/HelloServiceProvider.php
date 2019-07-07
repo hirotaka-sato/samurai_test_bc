@@ -9,9 +9,8 @@ class HelloServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-        View::composer('practice.index', function($view) {
-            $view->with('view_message', 'composer message!');
-        }
-    );
+        View::composer(
+            'practice.index', 'App\Http\Composers\HelloComposer'
+        );
     }
 }
