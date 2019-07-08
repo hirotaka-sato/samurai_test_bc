@@ -14,5 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('practice', 'PracticeController@index');
-Route::post('practice', 'PracticeController@post');
+Route::get('practice/add', 'PracticeController@index');
+Route::post('practice/add', 'PracticeController@create');
