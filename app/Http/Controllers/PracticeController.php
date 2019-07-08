@@ -1,18 +1,12 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 class PracticeController extends Controller
 {
-    public function index() {
-
-        return view('practice.index', ['message'=>'Hello!']);
-        
-    }
-    public function post(Request $request) {
-        $msg = $request->msg;
-        $data = [
-            'msg'=>'bbb'
-        ];
-        return view('practice.index', $data);
+    public function index(Request $request) {
+        $items = DB::select('select * from people');
+        return view('practice.index', ['items'=>$items]);
     }
 }
