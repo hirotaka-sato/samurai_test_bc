@@ -1,18 +1,13 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use App\Http\Middleware\PracticeMiddleware;
 class PracticeController extends Controller
 {
-    public function index() {
+    public function index(Request $request) {
 
-        return view('practice.index', ['message'=>'Hello!']);
+        return view('practice.index', ['data'=>$request->data]);
         
     }
-    public function post(Request $request) {
-        $msg = $request->msg;
-        $data = [
-            'msg'=>'bbb'
-        ];
-        return view('practice.index', $data);
-    }
+
 }

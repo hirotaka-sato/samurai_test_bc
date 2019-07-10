@@ -14,5 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('practice', 'PracticeController@index');
+use App\Http\Middleware\PracticeMiddleware;
+Route::get('practice', 'PracticeController@index')->middleware(PracticeMiddleware::class);
 Route::post('practice', 'PracticeController@post');
