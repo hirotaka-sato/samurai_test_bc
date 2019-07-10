@@ -6,7 +6,7 @@ class PracticeController extends Controller
 {
     public function index(Request $request) {
 
-        return view('practice.index', ['data'=>$request->data]);
+        return view('practice.index');
         
     }
 
