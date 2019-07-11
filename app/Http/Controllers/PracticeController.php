@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use App\Http\Requests\PracticeRequest;
 //use App\Http\Middleware\PracticeMiddleware;
 class PracticeController extends Controller
 {
@@ -10,15 +11,10 @@ class PracticeController extends Controller
         
     }
 
-    public function post(Request $request) {
+    public function post(PracticeRequest $request) {
         
-        $validate_rule = [
-            'name' => 'required',
-            'mail' => 'email',
-            'age' => 'numeric|between:0,150',
-        ];
-        $this->validate($request, $validate_rule);
         return view('practice.index', ['msg'=>'正しく入力されました！']);
+
     }
 
 }
