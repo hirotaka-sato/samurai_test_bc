@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 Route::get('practice', 'PracticeController@index');
 Route::post('practice', 'PracticeController@post');
+Route::get('practice/show', 'PracticeController@show');
 Route::get('practice/add', 'PracticeController@add');
 Route::post('practice/add', 'PracticeController@create');
 Route::get('practice/edit', 'PracticeController@edit');

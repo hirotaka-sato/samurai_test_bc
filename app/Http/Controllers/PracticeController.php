@@ -9,6 +9,12 @@ class PracticeController extends Controller
         $items = DB::table('people')->get();
         return view('practice.index', ['items'=>$items]);
     }
+
+    public function show(Request $request) {
+        $id = $request->id;
+        $item = DB::table('people')->where('id', $id)->first();
+        return view('practice.show', ['item'=>$item]);
+    }
     
     public function post(Request $request) {
         $items = DB::select('select * from people');
