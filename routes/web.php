@@ -17,3 +17,7 @@ Route::get('/', function () {
 //use App\Http\Middleware\PracticeMiddleware;
 Route::get('practice', 'PracticeController@index');
 Route::post('practice', 'PracticeController@post');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
