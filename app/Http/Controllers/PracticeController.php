@@ -12,8 +12,8 @@ class PracticeController extends Controller
 
     public function show(Request $request) {
         $id = $request->id;
-        $item = DB::table('people')->where('id', $id)->first();
-        return view('practice.show', ['item'=>$item]);
+        $items = DB::table('people')->where('id', '<=', $id)->get();
+        return view('practice.show', ['items'=>$items]);
     }
     
     public function post(Request $request) {
