@@ -20,3 +20,5 @@ Route::get('practice/add', 'PracticeController@add');
 Route::post('practice/add', 'PracticeController@create');
 Route::get('practice/edit', 'PracticeController@edit');
 Route::post('practice/edit', 'PracticeController@update');
+Route::get('practice/del', 'PracticeController@del');
+Route::post('practice/del', 'PracticeController@remove');
