@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 class PracticeController extends Controller
 {
     public function index(Request $request) {
-        $items = DB::select('select * from people');
+        $items = DB::table('people')->get();
         return view('practice.index', ['items'=>$items]);
     }
     
