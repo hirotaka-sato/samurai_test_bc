@@ -11,10 +11,9 @@ class PracticeController extends Controller
     }
 
     public function show(Request $request) {
-        $min = $request->min;
-        $max = $request->max;
+
         $items = DB::table('people')
-            ->whereRaw('age >= ? and age <= ?', [$min, $max])
+            ->orderBy('age', 'asc')
             ->get();
         return view('practice.show', ['items'=>$items]);
     }
