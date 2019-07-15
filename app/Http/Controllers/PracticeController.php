@@ -7,14 +7,14 @@ class PracticeController extends Controller
 {
     public function index(Request $request) {
 
-        $items = DB::table('people1')->get();
+        $items = DB::table('people')->get();
         return view('practice.index', ['items'=>$items]);
     }
 
     public function show(Request $request) {
 
         $page = $request->page;
-        $items = DB::table('people1')
+        $items = DB::table('people')
             ->offset($page *3)
             ->limit(3)
             ->get();
@@ -23,7 +23,7 @@ class PracticeController extends Controller
     
     public function post(Request $request) {
 
-        $items = DB::select('select * from people1');
+        $items = DB::select('select * from people');
         return view('practice.index', ['items'=>$items]);
     }
 
@@ -39,13 +39,13 @@ class PracticeController extends Controller
             'mail' => $request->mail,
             'age' => $request->age,
         ];
-        DB::table('people1')->insert($param);
+        DB::table('people')->insert($param);
         return redirect('/practice');
     }
 
     public function edit(Request $request) {
 
-        $item = DB::table('people1')
+        $item = DB::table('people')
             ->where('id', $request->id)->first();
         return view('practice.edit', ['form' => $item]);
     }
@@ -57,7 +57,7 @@ class PracticeController extends Controller
             'mail' => $request->mail,
             'age' => $request->age,
         ];
-        DB::table('people1') 
+        DB::table('people') 
             ->where('id', $request->id)
             ->update($param);
         return redirect('/practice');
@@ -65,14 +65,14 @@ class PracticeController extends Controller
 
     public function del(Request $request) {
 
-        $item = DB::table('people1')
+        $item = DB::table('people')
             ->where('id', $request->id)->first();
         return view('practice.del', ['form'=>$item]);
     }
 
     public function remove(Request $request) {
 
-        DB::table('people1')
+        DB::table('people')
             ->where('id', $request->id)->delete();
         return redirect('/practice');
     }

@@ -1,6 +1,6 @@
 @extends('layouts.practice')
 
-@section('title', 'Index')
+@section('title', 'Person.index')
 
 @section('menubar')
     @parent
