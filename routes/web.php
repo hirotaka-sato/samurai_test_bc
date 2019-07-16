@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('person', 'PersonController@index');
+Route::get('person/find', 'PersonController@find');
+Route::post('person/find', 'PersonController@search');
 Route::get('practice', 'PracticeController@index');
 Route::post('practice', 'PracticeController@post');
 Route::get('practice/show', 'PracticeController@show');
