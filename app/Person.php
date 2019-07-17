@@ -10,17 +10,14 @@ class Person extends Model
 {
     public function getData() {
 
-        return $this->id . ': ' . $this->name .' (' . $this->age . ')';
+        return $this->id . ': ' . $this->name . ' (' . $this->age . ')';
     }
+    
+    protected $guarded = ['id'];
 
-    public function scopeNameEqual($query, $str) {
-
-        return $query->where('name', $str);
-    }
-
-    protected static function boot() {
-
-        parent::boot();
-        static::addGlobalScope(new ScopePerson);
-    }
+    public static $rules = [
+        'name' => 'required',
+        'mail' => 'email',
+        'age' => 'numeric|min:0|max:150',
+    ];
 }
