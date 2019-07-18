@@ -16,12 +16,16 @@ class Board extends Model
 
     public function getData() {
 
-        return $this->id . ': ' . $this->title . ' ('
-            . $this->person->name . ')';
+        return $this->id . ': ' . $this->title;
     }
 
     public function person() {
 
         return $this->belongsTo('App\Person');
+    }
+
+    public function getMessage() {
+
+        return $this->message;
     }
 }

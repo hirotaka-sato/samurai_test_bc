@@ -4,31 +4,33 @@
 
 @section('menubar')
     @parent
-    インデックスページ
+    簡易掲示板
 @endsection
 
 @section('content')
     <table>
-    <tr><th>Person</th><th>Board</th></tr>
-    @foreach ($hasItems as $item)
+    <tr><th>ユーザー</th><th>タイトル</th><th width="500">メッセージ</th></tr>
+    @foreach ($items as $item)
         <tr>
             <td>{{$item->getData()}}</td>
             <td>
+            @if($item->boards != null)
                 <table width="100%">
                 @foreach($item->boards as $obj)
                     <tr><td>{{$obj->getData()}}</td></tr>
                 @endforeach
                 </table>
+            @endif
             </td>
-        </tr>
-    @endforeach
-    </table>
-    <div style="margin:10px;"></div>
-    <table>
-    <tr><th>Person</th></tr>
-    @foreach($noItems as $item)
-        <tr>
-            <td>{{$item->getData()}}</td>
+            <td>
+            @if($item->boards != null)
+                <table>
+                @foreach($item->boards as $obj)
+                    <tr><td width="500">{{$obj->getMessage()}}</td></tr>
+                @endforeach
+                </table>
+            @endif
+            </td>
         </tr>
     @endforeach
     </table>
