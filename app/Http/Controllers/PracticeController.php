@@ -11,6 +11,11 @@ class PracticeController extends Controller
         return view('practice.index', ['items'=>$items]);
     }
 
+    public function rest(Request $request) {
+
+        return view('practice.rest');
+    }
+
     public function show(Request $request) {
 
         $page = $request->page;

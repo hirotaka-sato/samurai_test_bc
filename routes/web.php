@@ -36,3 +36,6 @@ Route::get('practice/edit', 'PracticeController@edit');
 Route::post('practice/edit', 'PracticeController@update');
 Route::get('practice/del', 'PracticeController@del');
 Route::post('practice/del', 'PracticeController@remove');
+
+Route::resource('rest', 'RestappController');
+Route::get('practice/rest', 'PracticeController@rest');
